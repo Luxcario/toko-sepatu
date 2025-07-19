@@ -1,0 +1,237 @@
+/* --- global.css - Perbaikan dan Penambahan --- */
+
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Font yang lebih modern */
+    line-height: 1.6;
+    color: #333;
+    /* Warna teks dasar */
+    background-color: #f8f9fa;
+    /* Latar belakang halaman yang lebih cerah */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Kontainer untuk membatasi lebar konten */
+.container {
+    max-width: 1200px;
+    /* Lebar maksimum yang sedikit lebih besar */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tombol Dasar (Utility Class) */
+.button {
+    /* Mengganti .btn menjadi .button untuk konsistensi */
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    /* Sudut lebih lembut */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    /* Sedikit lebih tebal */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    font-size: 16px;
+}
+
+.button-primary {
+    background-color: #007bff;
+    /* Biru cerah */
+    color: #fff;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    /* Efek hover ringan */
+}
+
+.button-secondary {
+    background-color: #6c757d;
+    /* Abu-abu sedang */
+    color: #fff;
+}
+
+.button-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-2px);
+}
+
+.button-danger {
+    background-color: #dc3545;
+    /* Merah */
+    color: #fff;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.button-small {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+/* Link Dasar */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Heading Dasar */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 15px;
+    color: #343a40;
+    /* Warna heading lebih gelap */
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Form Styling General */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Message Styles (Success/Error) */
+p.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+p.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Untuk border-radius pada tabel */
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+table th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Flex utilities for layout */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}

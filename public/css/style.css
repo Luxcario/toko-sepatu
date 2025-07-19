@@ -1,0 +1,951 @@
+/* --- style.css - Perbaikan dan Penambahan --- */
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    /* Jarak antar menu */
+}
+
+.nav-links li a {
+    color: #555;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-links li a::after {
+    /* Efek underline pada hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Main Content Area */
+main {
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+    /* Menyesuaikan tinggi footer dan header */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    /* Gradasi warna */
+    color: #fff;
+    padding: 80px 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    color: #e9ecef;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-section .button {
+    font-size: 1.1em;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section .button:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-3px);
+}
+
+/* Featured Products / Product Grid */
+.featured-products {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.featured-products h2 {
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.featured-products h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    /* Teks di dalam card rata kiri */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1;
+    /* Agar konten card mengisi ruang yang tersedia */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    /* Tinggi gambar yang konsisten */
+    object-fit: cover;
+    /* Memastikan gambar mengisi area tanpa terdistorsi */
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    font-size: 1.3em;
+    margin: 15px 15px 5px 15px;
+    color: #343a40;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card .brand {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 15px 10px 15px;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    color: #007bff;
+    font-weight: 700;
+    margin: 0 15px 15px 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    /* Warna gelap untuk footer */
+    color: #ecf0f1;
+    /* Teks putih keabu-abuan */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* --- Layout Halaman Khusus --- */
+
+/* Static Pages (About, Contact) */
+.static-page {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.static-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.static-page p,
+.static-page ul {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.static-page ul {
+    list-style-type: disc;
+    margin-left: 25px;
+}
+
+.static-page ul li {
+    margin-bottom: 10px;
+}
+
+/* Login & Register Pages */
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+}
+
+.container form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.container form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.container p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+/* Product Detail Page */
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-detail .product-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+    text-align: center;
+}
+
+.product-detail .product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail .product-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+}
+
+.product-detail .product-info h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.product-detail .product-info p {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.product-detail .product-info .price {
+    font-size: 1.8em;
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-detail .product-info .stock .out-of-stock {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.product-detail .product-description {
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-detail .product-description h3 {
+    font-size: 1.4em;
+    color: #343a40;
+}
+
+.product-detail .product-description p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #666;
+}
+
+.product-detail .form-group {
+    margin-bottom: 20px;
+}
+
+.product-detail .form-group label {
+    font-size: 1em;
+}
+
+.product-detail .form-group input[type="number"],
+.product-detail .form-group select {
+    max-width: 150px;
+}
+
+.product-detail .button-primary {
+    font-size: 1.2em;
+    padding: 12px 25px;
+}
+
+/* Cart Page */
+.cart-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.cart-page table img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.cart-page .cart-product-info {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.cart-page .cart-product-info a {
+    color: #333;
+}
+
+.cart-page input[type="number"] {
+    width: 70px;
+    text-align: center;
+    padding: 5px;
+}
+
+.cart-actions {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.cart-summary {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+    max-width: 400px;
+    margin-left: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-summary h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cart-summary p span {
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.cart-summary .button {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 12px;
+}
+
+/* Checkout Page */
+.checkout-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.checkout-summary {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-summary h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+}
+
+.checkout-summary table th,
+.checkout-summary table td {
+    font-size: 0.95em;
+    padding: 10px 15px;
+}
+
+.checkout-summary table tfoot td {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #007bff;
+    border-top: 2px solid #007bff;
+    padding-top: 15px;
+}
+
+.checkout-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+}
+
+.checkout-form .form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.checkout-form .button.large-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+/* My Account Page */
+.my-account-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.user-profile,
+.order-history {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.user-profile h3,
+.order-history h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+}
+
+.user-profile p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.order-history table th,
+.order-history table td {
+    font-size: 0.95em;
+}
+
+.order-history .order-status-pending {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.order-history .order-status-processing {
+    color: #17a2b8;
+    font-weight: 600;
+}
+
+.order-history .order-status-shipped {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.order-history .order-status-completed {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.order-history .order-status-cancelled {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.order-detail-page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.order-detail-page p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.order-detail-page h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.order-detail-page table img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.order-detail-page .order-item-product-info {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* Admin Panel */
+.admin-main {
+    display: flex;
+    min-height: calc(100vh - 200px);
+    /* Menyesuaikan tinggi header dan footer */
+}
+
+.admin-sidebar {
+    width: 250px;
+    background-color: #343a40;
+    /* Warna gelap untuk sidebar */
+    color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar h3 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.admin-sidebar ul li a {
+    display: block;
+    color: #adb5bd;
+    /* Teks abu-abu muda */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.admin-sidebar ul li a:hover,
+.admin-sidebar ul li a.active {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-left: 20px;
+    /* Jarak dari sidebar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-content h2 {
+    margin-bottom: 25px;
+    color: #007bff;
+    text-align: center;
+}
+
+.admin-content h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.admin-content hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+}
+
+.admin-content table img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Category & Product Listing Page */
+.product-listing {
+    display: flex;
+    gap: 30px;
+}
+
+.product-listing .sidebar {
+    flex: 0 0 250px;
+    /* Lebar sidebar tetap */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-listing .sidebar h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+}
+
+.product-listing .sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-listing .sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.product-listing .sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.product-listing .sidebar ul li a:hover,
+.product-listing .sidebar ul li a.active {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.product-listing .content {
+    flex-grow: 1;
+}
+
+.product-listing .content h2 {
+    margin-bottom: 25px;
+    color: #007bff;
+    text-align: center;
+}
+
+.search-bar {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.search-bar button,
+.search-bar .button {
+    flex-shrink: 0;
+}
+
+/* Modal Styling (for order detail in admin/orders.php) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    /* Pastikan di atas elemen lain */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Latar belakang lebih gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 900px;
+    /* Lebar maksimum lebih besar */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+}
+
+.order-detail-modal-content h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+}
+
+.order-detail-modal-content p {
+    margin-bottom: 8px;
+}
+
+.order-detail-modal-content h4 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #343a40;
+}
+
+.order-detail-modal-content table img {
+    max-width: 60px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-links li a {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero-section {
+        padding: 50px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* Satu kolom di layar kecil */
+        padding: 0;
+    }
+
+    .product-detail {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-detail .product-image,
+    .product-detail .product-info {
+        max-width: 100%;
+    }
+
+    .admin-main {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .admin-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .product-listing {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-listing .sidebar {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 10% auto;
+    }
+
+    .search-bar form {
+        flex-direction: column;
+    }
+
+    .search-bar button,
+    .search-bar .button {
+        width: 100%;
+    }
+}
